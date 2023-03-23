@@ -40,7 +40,7 @@ fn common_chars(s1: &str, s2: &str) -> char {
 }
 
 fn main() {
-    let mut input = fs::read_to_string("./src/input.txt").expect("Failed to read file!");
+    let mut input = fs::read_to_string("day-3/src/input.txt").expect("Failed to read file!");
     input.pop();
     let lines: Vec<String> = Vec::from_iter(input.split("\n").map(String::from));
 
@@ -58,6 +58,6 @@ fn main() {
                        _ => 0,
                    }).fold(0, |acc, x| acc + x);
 
-    println!("Result is {sum}");
-    println!("Result of part two is {pri}");
+    println!("{sum}");
+    println!("{pri}");
 }

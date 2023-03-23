@@ -32,7 +32,7 @@ impl Dir {
 }
 
 fn main() {
-    let mut input = fs::read_to_string("./src/input.txt").expect("Failed to read file!");
+    let mut input = fs::read_to_string("day-7/src/input.txt").expect("Failed to read file!");
     input.pop();
     let lines: Vec<String> = Vec::from_iter(input.split("\n").map(String::from));
     let mut dirs: HashMap<String, Rc<RefCell<Dir>>> = HashMap::new();
@@ -90,6 +90,6 @@ fn main() {
             sum += cur_size;
         }
     }
-    println!("Result of part one is {sum}");
-    println!("Result of part two is {choice}");
+    println!("{sum}");
+    println!("{choice}");
 }

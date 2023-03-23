@@ -12,7 +12,7 @@ peg::parser!{
 }
 
 fn main() {
-    let mut input = fs::read_to_string("./src/input.txt").expect("Failed to read file!");
+    let mut input = fs::read_to_string("day-4/src/input.txt").expect("Failed to read file!");
     input.pop();
     let lines: Vec<String> = Vec::from_iter(input.split("\n").map(String::from));
     let mut cnt_part1 = 0;
@@ -29,6 +29,6 @@ fn main() {
             }
         }
     }
-    println!("Result is {cnt_part1}");
-    println!("Result of part two is {cnt_part2}");
+    println!("{cnt_part1}");
+    println!("{cnt_part2}");
 }

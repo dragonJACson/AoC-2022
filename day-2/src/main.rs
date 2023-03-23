@@ -1,7 +1,7 @@
 use std::fs;
 
 fn main() {
-    let mut input = fs::read_to_string("./src/input.txt").expect("Failed to read file!");
+    let mut input = fs::read_to_string("day-2/src/input.txt").expect("Failed to read file!");
     input.pop();
     let lines: Vec<String> = Vec::from_iter(input.split("\n").map(String::from));
     let score: u32 = lines.iter().fold(0 as u32, |acc, x|
@@ -32,6 +32,6 @@ fn main() {
             _ => 0,
         }
     );
-    println!("Final score: {score}");
-    println!("Final score (part two): {second_score}");
+    println!("{score}");
+    println!("{second_score}");
 }

@@ -11,7 +11,7 @@ enum Status {
 }
 
 fn main() {
-    let mut input = fs::read_to_string("./src/input.txt").expect("Failed to read file!");
+    let mut input = fs::read_to_string("day-8/src/input.txt").expect("Failed to read file!");
     input.pop();
     let lines: Vec<Vec<u32>> = Vec::from_iter(input.split("\n").map(String::from)).into_iter().map(
         |x| x.chars().map(|ch| ch.to_digit(10).unwrap()).collect()
@@ -100,6 +100,6 @@ fn main() {
     }
     let sum = status.iter().flatten().filter(|x| (**x).0 != Status::Invisible).count();
     let biggest = status.iter().flatten().map(|(_status, view)| view).max().unwrap();
-    println!("Result of part one is {sum}");
-    println!("Result of part two is {biggest}");
+    println!("{sum}");
+    println!("{biggest}");
 }

@@ -2,7 +2,7 @@ use std::fs;
 use std::collections::HashSet;
 
 fn main() {
-    let mut input = fs::read_to_string("./src/input.txt").expect("Failed to read file!");
+    let mut input = fs::read_to_string("day-9/src/input.txt").expect("Failed to read file!");
     input.pop();
     let lines: Vec<(String, i32)> = Vec::from_iter(input.split("\n").map(String::from)).into_iter().map(
         |x| (x.clone().split_once(" ").unwrap().0.to_owned(), x.clone().split_once(" ").unwrap().1.parse().unwrap())
@@ -54,6 +54,6 @@ fn main() {
             }
         }
     }
-    println!("Result of part one is {}", tail_positions.len());
-    println!("Result of part two is {}", nine_positions.len());
+    println!("{}", tail_positions.len());
+    println!("{}", nine_positions.len());
 }
