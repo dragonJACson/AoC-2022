@@ -141,4 +141,16 @@ mod tests {
 
         Ok(())
     }
+
+    #[test]
+    fn day_twelve() -> Result<(), Box<dyn std::error::Error>> {
+        let test_bin_path = build_test_binary("day-12", "").expect("error building test binary");
+        let mut test_bin = Command::new(test_bin_path);
+
+        test_bin.assert()
+                .success()
+                .stdout(predicate::str::diff("383\n377\n"));
+
+        Ok(())
+    }
 }
